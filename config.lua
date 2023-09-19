@@ -7,6 +7,7 @@ vim.opt.background = "dark"
 
 lvim.transparent_window = false
 lvim.colorscheme = "lunar"
+-- lvim.colorscheme = "lunaperche"
 
 ---- Buffer navigation --------------------------------------
 lvim.keys.normal_mode["<S-j>"] = false
