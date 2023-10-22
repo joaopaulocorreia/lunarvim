@@ -3,11 +3,11 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
-lvim.transparent_window = false
-lvim.colorscheme = "lunaperche"
+lvim.transparent_window = true
 lvim.format_on_save.enabled = true
+lvim.colorscheme = "tokyonight"
 
 lvim.keys.normal_mode["<S-j>"] = false
 lvim.keys.normal_mode["<S-k>"] = false
@@ -16,7 +16,39 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 
 lvim.keys.normal_mode["<c-w>"] = ":ZenMode<CR>"
 
+lvim.builtin.telescope.theme = "center"
+
 lvim.plugins = {
   { "lunarvim/colorschemes" },
-  { "folke/zen-mode.nvim" },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    event = "BufRead",
+    config = function()
+      require("zen-mode").setup({
+        window = {
+          backdrop = 1,
+          height = 0.85, -- height of the Zen window
+          width = 0.7,
+          options = {
+            signcolumn = "no",      -- disable signcolumn
+            number = false,         -- disable number column
+            relativenumber = false, -- disable relative numbers
+          },
+        },
+        plugins = {
+          gitsigns = { enabled = true }, -- disables git signs
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        },
+      })
+    end,
+  },
 }
