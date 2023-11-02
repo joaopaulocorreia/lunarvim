@@ -5,7 +5,7 @@
 
 vim.opt.background = "dark"
 
-lvim.transparent_window = true
+lvim.transparent_window = false
 lvim.format_on_save.enabled = true
 lvim.colorscheme = "tokyonight"
 
@@ -17,6 +17,8 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<c-w>"] = ":ZenMode<CR>"
 
 lvim.builtin.telescope.theme = "center"
+
+lvim.builtin.nvimtree.setup.view.width = 45
 
 lvim.plugins = {
   { "lunarvim/colorschemes" },
