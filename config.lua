@@ -21,7 +21,6 @@ lvim.builtin.telescope.theme = "center"
 lvim.builtin.nvimtree.setup.view.width = 45
 
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
   {
     "folke/tokyonight.nvim",
     lazy = false,
